@@ -8,7 +8,7 @@ const char* password = "wifippicrusak";     // The password of the Wi-Fi network
 
 
 
-//String sendval, sendval2, sendval3, postData, serverName;
+String sendlev1, postData, serverName;
 
 void setup() {
   pinMode(D4, OUTPUT);
