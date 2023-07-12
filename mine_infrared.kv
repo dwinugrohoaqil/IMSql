@@ -221,128 +221,6 @@ WindowManager:
 
 <SecondWindow>:
     name: "second"
-    namadb:namadb
-    
-    BoxLayout:
-        padding: 20
-        orientation:'vertical'    
-        BoxLayout:
-            Label:
-                text:''
-                font_size: '20'
-        BoxLayout:
-            Label:
-                font_size: '40'
-                text:"Database GUI Command"
-                color: 0,0,0,1    
-        BoxLayout:
-            Label:
-                text:''
-                font_size: '10'
-        BoxLayout:                                                    
-            TextInput:
-                id: namadb
-                hint_text: 'Database Name'
-        BoxLayout:
-            Label:
-                multiline: True
-                id: tampildb
-                                                    
-        BoxLayout:
-            orientation:'horizontal'    
-            BoxLayout:
-                orientation:'vertical'    
-                Button:
-                    text:'Create DB'
-                    font_size: '20'
-                    size:100,100
-                    size_hint_x:1
-                    on_press:
-                        root.buatdb()
-                Button:
-                    text:'Drop DB'
-                    font_size: '20'
-                    size:100,100
-                    size_hint_x:1
-                    on_press:
-                        root.hapusdb()
-            BoxLayout:
-                Button:
-                    text:'Show db'
-                    font_size: '20'
-                    size:100,100
-                    size_hint_x:1
-                    on_press:
-                        root.showdb()
-                
-        BoxLayout:
-            Label:
-                multiline: True
-                id: tampiltabel
-            Label:
-                multiline: True
-                id: tampiltabel1
-                                                    
-
-        GridLayout:  
-            Button:
-                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
-                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
-                size_hint_x: .3
-                size_hint_y: .5
-                on_release:
-                    app.root.current = "menu"
-                    root.manager.transition.direction = "left"
-            
-<ThirdWindow>:
-    name: "third"
-    tblname:tblname
-    #dbname:dbname
-    BoxLayout:        
-        # anchor_x: 'center'
-        # anchor_y: 'center'
-        #size_hint: 0.1,0.1
-        orientation: 'vertical'
-        padding: 20
-        spacing: 20
-        BoxLayout:
-        Label:
-            font_size: '60'
-            text:'Monitor Potensiometer'
-            color: 0,0,0,1
-        BoxLayout:
-            TextInput:
-                id: tblname
-                hint_text:'Table Name'
-        BoxLayout:
-            Label:
-                id: sh_id
-        BoxLayout:
-            Label:
-            Button:      
-                text: "stop reading"
-                on_press:
-                    #root.hps_btn()
-                    root.stp_btn()
-            Label:
-            Button:  
-                text: "show records"
-                on_press:
-                    root.use_btn()
-            Label:
-
-        GridLayout:  
-            Button:
-                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
-                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
-                size_hint_x: .3
-                size_hint_y: .5
-                on_release:
-                    app.root.current = "menu"
-                    root.manager.transition.direction = "left"
-
-<FourWindow>:
-    name: "four"
     tblnamesensor:tblnamesensor
     #dbname:dbname
     BoxLayout:        
@@ -356,7 +234,7 @@ WindowManager:
         BoxLayout:
             Label:
                 font_size: '60'
-                text:'Temperature / Humidity'
+                text:'Temperature / Humidity ACC'
                 color: 0,0,0,1  
         
         BoxLayout:
@@ -376,6 +254,134 @@ WindowManager:
             Label:
             Label:
                 font_size: '20'
+                id: sh_id
+        BoxLayout:
+            Label:
+            Button:
+                text: "stop reading"
+                on_press:
+                    #root.hps_btn()
+                    root.stp_btn()
+            Label:
+            Button:    
+                text: "show records"
+                on_press:
+                    root.use_btn()
+            Label:     
+        BoxLayout:
+            Label:
+            
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "menu"
+                    root.manager.transition.direction = "left"
+            
+<ThirdWindow>:
+    name: "third"
+    tblnamesensor:tblnamesensor
+    #dbname:dbname
+    BoxLayout:        
+        # anchor_x: 'center'
+        # anchor_y: 'center'
+        #size_hint: 0.1,0.1
+        orientation: 'vertical'
+        padding: 20
+        BoxLayout:
+            Label:
+        BoxLayout:
+            Label:
+                font_size: '60'
+                text:'Temperature / Humidity APP'
+                color: 0,0,0,1  
+        
+        BoxLayout:
+            TextInput:
+                id: tblnamesensor
+                hint_text:'Table Name'
+
+        BoxLayout:
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    font_size: '20'
+                    text: "Temperature Threshold"
+                Label:
+                    font_size: '20'
+                    id: hasil
+            Label:
+            Label:
+                font_size: '20'
+                id: sh_id
+        BoxLayout:
+            Label:
+            Button:
+                text: "stop reading"
+                on_press:
+                    #root.hps_btn()
+                    root.stp_btn()
+            Label:
+            Button:    
+                text: "show records"
+                on_press:
+                    root.use_btn()
+            Label:     
+        BoxLayout:
+            Label:
+            
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "menu"
+                    root.manager.transition.direction = "left"
+
+<FourWindow>:
+    name: "four"
+    adcsensor:kvadcsensor
+    #dbname:dbname
+    BoxLayout:        
+        # anchor_x: 'center'
+        # anchor_y: 'center'
+        #size_hint: 0.1,0.1
+        orientation: 'vertical'
+        padding: 20
+        BoxLayout:
+            Label:
+        BoxLayout:
+            Label:
+                font_size: '60'
+                text:'Temperature / Humidity ADC'
+                color: 0,0,0,1  
+        
+        BoxLayout:
+            TextInput:
+                id: kvadcsensor
+                hint_text:'Table Name'
+
+        BoxLayout:
+            BoxLayout:
+                orientation: 'vertical'
+                text: "satu"
+                Label:
+                    font_size: '20'
+                    text: "dua"
+                Label:
+                    font_size: '20'
+                    text: "tiga"
+                    id: hasil
+            Label:
+                text: "empat"
+            Label:
+                font_size: '20'
+                text: "lima"
                 id: sh_id
         BoxLayout:
             Label:
