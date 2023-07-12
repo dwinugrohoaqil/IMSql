@@ -79,8 +79,7 @@ class SecondWindow(Screen,BoxLayout):
                 return print(databases)        
         except Error as e:      
             print("Error ", e)
-        
-    
+          
 
 class ThirdWindow(Screen):
 
@@ -195,10 +194,10 @@ class FourWindow(Screen):
 class WindowManager(ScreenManager):
     pass
 
-kv = Builder.load_file("guidb.kv")
+kv = Builder.load_file("mine_infrared.kv")
     
 class MyMainApp(App):
-    title = "Tugas Kelompok AqilBimaRioAmel"
+    title = "IMSql"
     def build(self):
         return kv
     
