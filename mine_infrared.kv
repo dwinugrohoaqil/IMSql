@@ -1,0 +1,411 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+    MenuWindow:
+    FourWindow:
+
+<TextInput>
+    font_size: 20
+
+<MainWindow>: #CONNECTION DATABASE
+    name: "main"
+    BoxLayout:
+        hasil:hasil
+        hst:hst
+        usr:usr
+        pwd:pwd
+        padding: 20
+        spacing: 10
+        
+        orientation:'vertical'
+        # Label:
+        #     text:''
+        BoxLayout:            
+            BoxLayout:
+                orientation: 'horizontal'
+                cols: 3
+                spacing: 70
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/1.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/1.png"
+                    size_hint_x: .3
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/2.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/2.png"
+                    size_hint_x: .3
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/3.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/3.png"
+                    size_hint_x: .3
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/4.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/4.png"
+                    size_hint_x: .3
+        BoxLayout: 
+            orientation: 'vertical'         
+            BoxLayout:
+                Label:      
+            BoxLayout:
+                orientation: 'horizontal'         
+                Label:
+                    text:'Host / IP'
+                TextInput:
+                    id: hst
+                    hint_text: 'Host / IP'        
+                
+        BoxLayout:
+            orientation: 'vertical'
+            cols: 3
+            spacing: 15
+
+            BoxLayout:
+                orientation: 'horizontal'
+                cols: 3
+                spacing: 15
+                Label:
+                    text:'Username'
+                TextInput:
+                    id: usr
+                    hint_text: 'Username' 
+
+            BoxLayout:
+                orientation: 'horizontal'
+                cols: 3
+                spacing: 15
+                Label:
+                    text:'Password'
+                TextInput:
+                    id: pwd
+                    hint_text: 'Password'
+                    password: True
+                                                
+            BoxLayout:
+                orientation: 'horizontal'
+                cols: 3
+                spacing: 15
+                Label:
+                    text:'Nama Database'
+                TextInput:
+                    id: db
+                    hint_text: 'Nama Database'
+
+
+        BoxLayout:
+            orientation: 'vertical'  
+            Label:
+                text:  
+            BoxLayout:
+                orientation: 'horizontal'    
+                spacing: 50
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                    size_hint_x: .3
+                    on_release:
+                        root.close_application()
+
+                Label:     
+                    text:''
+                    font_size: '20'
+
+                Label:
+                    id:hasil
+                    type: 'int'
+                    font_size: '20'
+                
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/11.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/11.png"
+                    size_hint_x: .3
+                    on_release:
+                        root.val_in()
+                        root.manager.transition.direction = "left"
+            
+            
+            
+
+<MenuWindow>: #pass
+    name: "menu"
+    BoxLayout:
+        orientation:'vertical'
+        padding: 20
+        spacing: 10
+        BoxLayout: #TULISAN SELECT
+            Label:
+                font_size: '80'
+                text:"Select Room"
+                color: 0,0,0,1
+        BoxLayout: # 3 TOMBOL
+            cols: 3
+            spacing: 150
+            BoxLayout:
+                orientation:'vertical'
+                cols: 3
+                spacing: 15
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/acc.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/acc.png"
+                    on_release:
+                        app.root.current = "second"
+                        root.manager.transition.direction = "right"
+            BoxLayout:
+                orientation:'vertical'
+                cols: 3
+                spacing: 15
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/app.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/app.png"
+                    on_release:
+                        app.root.current = "third"
+                        root.manager.transition.direction = "right"
+            BoxLayout:
+                orientation:'vertical'
+                cols: 3
+                spacing: 15
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/adc.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/adc.png"
+                    on_release:
+                        app.root.current = "four"
+                        root.manager.transition.direction = "right"
+        BoxLayout:
+            spacing: '150'
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    font_size: '20'
+                    text:"ACC"
+                    color: 0,0,0,1
+                Label:
+                    font_size: '20'
+                    text:"OPS ROOM"
+                    color: 0,0,0,1
+                Label:
+                Label:
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    font_size: '20'
+                    text:"APP"
+                    color: 0,0,0,1
+                Label:
+                    font_size: '20'
+                    text:"OPS ROOM"
+                    color: 0,0,0,1
+                Label:
+                Label:
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    font_size: '20'
+                    text:"ADC"
+                    color: 0,0,0,1
+                Label:
+                    font_size: '20'
+                    text:"TOWER"
+                    color: 0,0,0,1
+                Label:
+                Label:
+
+        GridLayout:  
+            Button: #untuk back/kembali
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "main"
+                    root.manager.transition.direction = "left"
+
+
+<SecondWindow>:
+    name: "second"
+    namadb:namadb
+    
+    BoxLayout: 
+        padding: 20
+        orientation:'vertical'    
+        BoxLayout:
+            Label:
+                text:''
+                font_size: '20'
+        BoxLayout:
+            Label:
+                font_size: '40'
+                text:"Database GUI Command"
+                color: 0,0,0,1    
+        BoxLayout:
+            Label:
+                text:''
+                font_size: '10'
+        BoxLayout:                                                    
+            TextInput:
+                id: namadb
+                hint_text: 'Database Name'
+        BoxLayout:
+            Label:
+                multiline: True
+                id: tampildb
+                                                    
+        BoxLayout:
+            orientation:'horizontal'    
+            BoxLayout:
+                orientation:'vertical'    
+                Button:
+                    text:'Create DB'
+                    font_size: '20'
+                    size:100,100
+                    size_hint_x:1
+                    on_press:
+                        root.buatdb()
+                Button:
+                    text:'Drop DB'
+                    font_size: '20'
+                    size:100,100
+                    size_hint_x:1
+                    on_press:
+                        root.hapusdb()
+            BoxLayout:
+                Button:
+                    text:'Show db'
+                    font_size: '20'
+                    size:100,100
+                    size_hint_x:1
+                    on_press:
+                        root.showdb()
+                
+        BoxLayout:
+            Label:
+                multiline: True
+                id: tampiltabel
+            Label:
+                multiline: True
+                id: tampiltabel1
+                                                    
+
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "menu"
+                    root.manager.transition.direction = "left"
+            
+<ThirdWindow>:
+    name: "third"
+    tblname:tblname
+    #dbname:dbname
+    BoxLayout:        
+        # anchor_x: 'center'
+        # anchor_y: 'center'
+        #size_hint: 0.1,0.1
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+        BoxLayout:
+        Label:
+            font_size: '60'
+            text:'Monitor Potensiometer'
+            color: 0,0,0,1
+        BoxLayout:
+            TextInput:
+                id: tblname
+                hint_text:'Table Name'
+        BoxLayout:
+            Label:
+                id: sh_id
+        BoxLayout:
+            Label:
+            Button:      
+                text: "stop reading"
+                on_press:
+                    #root.hps_btn()
+                    root.stp_btn()
+            Label:
+            Button:  
+                text: "show records"
+                on_press:
+                    root.use_btn()
+            Label:
+
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "menu"
+                    root.manager.transition.direction = "left"
+
+<FourWindow>:
+    name: "four"
+    tblnamesensor45:tblnamesensor45
+    tblnamesensor46:tblnamesensor46
+    tblnamesensor47:tblnamesensor47
+    #dbname:dbname
+    BoxLayout:        
+        # anchor_x: 'center'
+        # anchor_y: 'center'
+        #size_hint: 0.1,0.1
+        orientation: 'vertical'
+        padding: 20
+        BoxLayout:
+            color: 233/255 , 218/255 , 193 , 1
+            Label:
+        BoxLayout:
+            Label:
+                font_size: '60'
+                text:'Temperature / Humidity'
+                color: 0,0,0,1  
+        
+        BoxLayout:
+            Label:
+                font_size: '20'
+                id: sh_id45
+            Label:
+                font_size: '20'
+                id: sh_id46
+            Label:
+                font_size: '20'
+                id: sh_id47
+
+        BoxLayout:
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    font_size: '20'
+                    text: "Temperature Threshold"
+                Label:
+                    font_size: '20'
+                    id: hasil
+            Label:
+        BoxLayout:
+            Label:
+            Button:
+                text: "stop reading"
+                on_press:
+                    #root.hps_btn()
+                    root.stp_btn()
+            Label:
+            Button:    
+                text: "show records"
+                on_press:
+                    root.use_btn()
+            Label:     
+        BoxLayout:
+            Label:
+            
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "menu"
+                    root.manager.transition.direction = "left"
+    
