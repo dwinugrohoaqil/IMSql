@@ -8,7 +8,7 @@ WindowManager:
 <TextInput>
     font_size: 20
 
-<MainWindow>: #CONNECTION DATABASE
+<MainWindow>:
     name: "main"
     BoxLayout:
         hasil:hasil
@@ -125,18 +125,18 @@ WindowManager:
             
             
 
-<MenuWindow>: #pass
+<MenuWindow>:
     name: "menu"
     BoxLayout:
         orientation:'vertical'
         padding: 20
         spacing: 10
-        BoxLayout: #TULISAN SELECT
+        BoxLayout:
             Label:
                 font_size: '80'
-                text:"Select Room"
+                text:"Select :"
                 color: 0,0,0,1
-        BoxLayout: # 3 TOMBOL
+        BoxLayout:
             cols: 3
             spacing: 150
             BoxLayout:
@@ -175,11 +175,20 @@ WindowManager:
                 orientation:'vertical'
                 Label:
                     font_size: '20'
-                    text:"ACC"
+                    text:"DB Commands"
+                    color: 0,0,0,1
+                Label:
+                Label:
+                Label:
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    font_size: '20'
+                    text:"ESP8266"
                     color: 0,0,0,1
                 Label:
                     font_size: '20'
-                    text:"OPS ROOM"
+                    text:"(Potensio Meter)"
                     color: 0,0,0,1
                 Label:
                 Label:
@@ -187,29 +196,17 @@ WindowManager:
                 orientation:'vertical'
                 Label:
                     font_size: '20'
-                    text:"APP"
+                    text:"ESP8266"
                     color: 0,0,0,1
                 Label:
                     font_size: '20'
-                    text:"OPS ROOM"
-                    color: 0,0,0,1
-                Label:
-                Label:
-            BoxLayout:
-                orientation:'vertical'
-                Label:
-                    font_size: '20'
-                    text:"ADC"
-                    color: 0,0,0,1
-                Label:
-                    font_size: '20'
-                    text:"TOWER"
+                    text:"(Humidity & Temperature)"
                     color: 0,0,0,1
                 Label:
                 Label:
 
         GridLayout:  
-            Button: #untuk back/kembali
+            Button:
                 background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
                 background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
                 size_hint_x: .3
@@ -223,7 +220,7 @@ WindowManager:
     name: "second"
     namadb:namadb
     
-    BoxLayout: 
+    BoxLayout:
         padding: 20
         orientation:'vertical'    
         BoxLayout:
@@ -343,9 +340,7 @@ WindowManager:
 
 <FourWindow>:
     name: "four"
-    tblnamesensor45:tblnamesensor45
-    tblnamesensor46:tblnamesensor46
-    tblnamesensor47:tblnamesensor47
+    tblnamesensor:tblnamesensor
     #dbname:dbname
     BoxLayout:        
         # anchor_x: 'center'
@@ -354,7 +349,6 @@ WindowManager:
         orientation: 'vertical'
         padding: 20
         BoxLayout:
-            color: 233/255 , 218/255 , 193 , 1
             Label:
         BoxLayout:
             Label:
@@ -363,15 +357,9 @@ WindowManager:
                 color: 0,0,0,1  
         
         BoxLayout:
-            Label:
-                font_size: '20'
-                id: sh_id45
-            Label:
-                font_size: '20'
-                id: sh_id46
-            Label:
-                font_size: '20'
-                id: sh_id47
+            TextInput:
+                id: tblnamesensor
+                hint_text:'Table Name'
 
         BoxLayout:
             BoxLayout:
@@ -383,6 +371,9 @@ WindowManager:
                     font_size: '20'
                     id: hasil
             Label:
+            Label:
+                font_size: '20'
+                id: sh_id
         BoxLayout:
             Label:
             Button:

@@ -79,8 +79,7 @@ class SecondWindow(Screen,BoxLayout):
                 return print(databases)        
         except Error as e:      
             print("Error ", e)
-          
-
+           
 class ThirdWindow(Screen):
 
     def stp_btn(self):
@@ -118,11 +117,11 @@ class FourWindow(Screen):
 
     def readComm(self,_):
         global db,data
-        namatblsensor45= self.ids.tblnamesensor45.text
+        namatblsensor= self.ids.tblnamesensor.text
         
         db = mysql.connector.connect(host=host, user=user, password=password, database=database)
         cursor=db.cursor()
-        sql = "SELECT suara FROM cwp45 ORDER BY datetime DESC LIMIT 1;"
+        sql = "SELECT suara FROM " +namatblsensor+" ORDER BY datetime DESC LIMIT 1;"
 
         try:
             cursor.execute(sql)
@@ -131,7 +130,7 @@ class FourWindow(Screen):
             results = cursor.fetchall()
             for i in results:
                 word = f'{word}\n{i}' #n{i[0]} to select the first column
-                self.ids.sh_id45.text= f'{word}'
+                self.ids.sh_id.text= f'{word}'
             #print (results)
             db.commit()               
             #print(results)
@@ -139,13 +138,13 @@ class FourWindow(Screen):
             print ("Error! Unable to fetch data" )  
         
         return
-    def readComm(self,_):
-        global db,data
-        namatblsensor46= self.ids.tblnamesensor46.text
-        
+    def ulang(self,arg):
+        global db,data,hasil
+        namatblsensor= self.ids.tblnamesensor.text
+
         db = mysql.connector.connect(host=host, user=user, password=password, database=database)
         cursor=db.cursor()
-        sql = "SELECT suara FROM cwp46 ORDER BY datetime DESC LIMIT 1;"
+        sql = "SELECT stt FROM " +namatblsensor+" ORDER BY datetime DESC LIMIT 1;"
 
         try:
             cursor.execute(sql)
@@ -154,38 +153,15 @@ class FourWindow(Screen):
             results = cursor.fetchall()
             for i in results:
                 word = f'{word}\n{i}' #n{i[0]} to select the first column
-                self.ids.sh_id46.text= f'{word}'
+                self.ids.hasil.text= f'{word}'
+                
             #print (results)
             db.commit()               
             #print(results)
         except:
             print ("Error! Unable to fetch data" )  
         
-        return
-    def readComm(self,_):
-        global db,data
-        namatblsensor47= self.ids.tblnamesensor47.text
-        
-        db = mysql.connector.connect(host=host, user=user, password=password, database=database)
-        cursor=db.cursor()
-        sql = "SELECT suara FROM cwp47 ORDER BY datetime DESC LIMIT 1;"
-
-        try:
-            cursor.execute(sql)
-            word=''
-            # Fetch all the rows in a list of lists.
-            results = cursor.fetchall()
-            for i in results:
-                word = f'{word}\n{i}' #n{i[0]} to select the first column
-                self.ids.sh_id47.text= f'{word}'
-            #print (results)
-            db.commit()               
-            #print(results)
-        except:
-            print ("Error! Unable to fetch data" )  
-        
-        return
-     
+        return       
     def use_btn(self):
         global dd
         dd = Clock.schedule_interval(self.readComm, 1)
@@ -194,10 +170,10 @@ class FourWindow(Screen):
 class WindowManager(ScreenManager):
     pass
 
-kv = Builder.load_file("mine_infrared.kv")
+kv = Builder.load_file("guidb.kv")
     
 class MyMainApp(App):
-    title = "IMSql"
+    title = "Tugas Kelompok AqilBimaRioAmel"
     def build(self):
         return kv
     
