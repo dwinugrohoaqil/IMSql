@@ -1,5 +1,8 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
+# from kivy.uix.label import Label
+# from kivy.uix.floatlayout import FloatLayout
+# from kivy.graphics import Color, Rectangle
 import mysql.connector
 from mysql.connector import Error
 from kivy.clock import Clock
@@ -163,65 +166,44 @@ class FourWindow(Screen):
 
         try:
             # Query untuk tabel cwp45
-            sql_45 = "SELECT * FROM cwp45 ORDER BY Timestamp DESC LIMIT 1;"
+            sql_45 = "SELECT Paper_Level FROM cwp45 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_45)
             results_45 = cursor.fetchall()
-            for result in results_45:
-                value_45 = result[0]  # Mengambil nilai pertama dari row
+            # for result in results_45:
+            #     results_45 = result[0]  # Mengambil nilai pertama dari row
 
-            # word_45 = ""
-            # for i in results_45:
-            #     word_45 = f"{word_45}\n{i}"
-            # self.ids.hasil45.text = word_45
+            word_45 = ""
+            for row in results_45:
+                paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
+                word_45 = f"{word_45}\n{paper_level}"
+            self.ids.hasil45.text = word_45
+
 
             # Query untuk tabel cwp46
-            sql_46 = "SELECT * FROM cwp46 ORDER BY Timestamp DESC LIMIT 1;"
+            sql_46 = "SELECT Paper_Level FROM cwp46 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_46)
             results_46 = cursor.fetchall()
-            for result in results_46:
-                value_46 = result[0]  # Mengambil nilai pertama dari row
+            # for result in results_46:
+            #     results_46 = result[0]  # Mengambil nilai pertama dari row
 
-            # word_46 = ""
-            # for i in results_46:
-            #     word_46 = f"{word_46}\n{i}"
-            # self.ids.hasil46.text = word_46
+            word_46 = ""
+            for i in results_46:
+                paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
+                word_46 = f"{word_46}\n{paper_level}"
+            self.ids.hasil46.text = word_46
 
             # Query untuk tabel cwp47
-            sql_47 = "SELECT * FROM cwp47 ORDER BY Timestamp DESC LIMIT 1;"
+            sql_47 = "SELECT Paper_Level FROM cwp47 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_47)
             results_47 = cursor.fetchall()
-            for result in results_47:
-                value_47 = result[0]  # Mengambil nilai pertama dari row
+            # for result in results_47:
+            #     results_47 = result[0]  # Mengambil nilai pertama dari row
 
-            # word_47 = ""
-            # for i in results_47:
-            #     word_47 = f"{word_47}\n{i}"
-            # self.ids.hasil47.text = word_47
-
-            # =================================BACKGROUND COLOR
-
-             # Mengubah warna latar belakang berdasarkan nilai yang diperoleh
-            if value_45 == 1:
-                self.ids.hasil45.background_color = (1, 0, 0, 1)  # Merah
-            elif value_45 == 2:
-                self.ids.hasil45.background_color = (1, 1, 0, 1)  # Kuning
-            elif value_45 == 3:
-                self.ids.hasil45.background_color = (0, 1, 0, 1)  # Hijau
-
-            if value_46 == 1:
-                self.ids.hasil46.background_color = (1, 0, 0, 1)  # Merah
-            elif value_46 == 2:
-                self.ids.hasil46.background_color = (1, 1, 0, 1)  # Kuning
-            elif value_46 == 3:
-                self.ids.hasil46.background_color = (0, 1, 0, 1)  # Hijau
-
-            if value_47 == 1:
-                self.ids.hasil47.background_color = (1, 0, 0, 1)  # Merah
-            elif value_47 == 2:
-                self.ids.hasil47.background_color = (1, 1, 0, 1)  # Kuning
-            elif value_47 == 3:
-                self.ids.hasil47.background_color = (0, 1, 0, 1)  # Hijau
-
+            word_47 = ""
+            for i in results_47:
+                paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
+                word_47 = f"{word_47}\n{paper_level}"
+            self.ids.hasil47.text = word_47
 
             db.commit()
 
