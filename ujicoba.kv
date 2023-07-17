@@ -1,0 +1,729 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+    MenuWindow:
+    FourWindow:
+
+<TextInput>
+    font_size: 20
+
+<MainWindow>:
+    name: "main"
+    BoxLayout:
+        hasil:hasil
+        hst:hst
+        usr:usr
+        pwd:pwd
+        padding: 20
+        spacing: 10
+        
+        orientation:'vertical'
+        # Label:
+        #     text:''
+        BoxLayout:            
+            BoxLayout:
+                orientation: 'horizontal'
+                cols: 3
+                spacing: 70
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/1.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/1.png"
+                    size_hint_x: .3
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/2.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/2.png"
+                    size_hint_x: .3
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/3.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/3.png"
+                    size_hint_x: .3
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/4.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/4.png"
+                    size_hint_x: .3
+        BoxLayout: 
+            orientation: 'vertical'         
+            BoxLayout:
+                Label:      
+            BoxLayout:
+                orientation: 'horizontal'         
+                Label:
+                    text:'Host / IP'
+                TextInput:
+                    id: hst
+                    hint_text: 'Host / IP'        
+                
+        BoxLayout:
+            orientation: 'vertical'
+            cols: 3
+            spacing: 15
+
+            BoxLayout:
+                orientation: 'horizontal'
+                cols: 3
+                spacing: 15
+                Label:
+                    text:'Username'
+                TextInput:
+                    id: usr
+                    hint_text: 'Username' 
+
+            BoxLayout:
+                orientation: 'horizontal'
+                cols: 3
+                spacing: 15
+                Label:
+                    text:'Password'
+                TextInput:
+                    id: pwd
+                    hint_text: 'Password'
+                    password: True
+                                                
+            BoxLayout:
+                orientation: 'horizontal'
+                cols: 3
+                spacing: 15
+                Label:
+                    text:'Nama Database'
+                TextInput:
+                    id: db
+                    hint_text: 'Nama Database'
+
+
+        BoxLayout:
+            orientation: 'vertical'  
+            Label:
+                text:  
+            BoxLayout:
+                orientation: 'horizontal'    
+                spacing: 50
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                    size_hint_x: .3
+                    on_release:
+                        root.close_application()
+
+                Label:     
+                    text:''
+                    font_size: '20'
+
+                Label:
+                    id:hasil
+                    type: 'int'
+                    font_size: '20'
+                
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/11.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/11.png"
+                    size_hint_x: .3
+                    on_release:
+                        root.val_in()
+                        root.manager.transition.direction = "left"
+            
+            
+            
+
+<MenuWindow>:
+    name: "menu"
+    BoxLayout:
+        orientation:'vertical'
+        padding: 20
+        spacing: 10
+        BoxLayout:
+            Label:
+                font_size: '80'
+                text:"-Operasional Room-"
+                color: 0,0,0,1
+        BoxLayout:
+            cols: 3
+            spacing: 150
+            BoxLayout:
+                orientation:'vertical'
+                cols: 3
+                spacing: 15
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/acc.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/acc.png"
+                    on_release:
+                        app.root.current = "second"
+                        root.manager.transition.direction = "right"
+            BoxLayout:
+                orientation:'vertical'
+                cols: 3
+                spacing: 15
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/app.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/app.png"
+                    on_release:
+                        app.root.current = "third"
+                        root.manager.transition.direction = "right"
+            BoxLayout:
+                orientation:'vertical'
+                cols: 3
+                spacing: 15
+                Button:
+                    background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/adc.png"
+                    background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/adc.png"
+                    on_release:
+                        app.root.current = "four"
+                        root.manager.transition.direction = "right"
+        BoxLayout:
+            spacing: '150'
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    font_size: '20'
+                    text:"ACC"
+                    color: 0,0,0,1
+                Label:
+                    font_size: '20'
+                    text:"OPS ROOM"
+                    color: 0,0,0,1
+                Label:
+                Label:
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    font_size: '20'
+                    text:"APP"
+                    color: 0,0,0,1
+                Label:
+                    font_size: '20'
+                    text:"OPS ROOM"
+                    color: 0,0,0,1
+                Label:
+                Label:
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                    font_size: '20'
+                    text:"ADC"
+                    color: 0,0,0,1
+                Label:
+                    font_size: '20'
+                    text:"TOWER"
+                    color: 0,0,0,1
+                Label:
+                Label:
+
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "main"
+                    root.manager.transition.direction = "left"
+
+
+<SecondWindow>:
+    name: "second"
+    #dbname:dbname
+    BoxLayout:        
+        # anchor_x: 'center'
+        # anchor_y: 'center'
+        #size_hint: 0.1,0.1
+        orientation: 'vertical'
+        padding: 20
+        BoxLayout:
+            Label:
+        BoxLayout:
+            Label:
+                font_size: '60'
+                text:'ACC/OPS Room CWP'
+                color: 0,0,0,1  
+        
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "45"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil1
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "46"
+                    font_size: '20'
+ 
+                Label:
+                    font_size: '20'
+                    id: hasil2
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil3
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil4
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil5
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil6
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil7
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "45"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil8
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "46"
+                    font_size: '20'
+ 
+                Label:
+                    font_size: '20'
+                    id: hasil9
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil10
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil11
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil12
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil13
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil14
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil15
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil16
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil17
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil18
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil19
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "46"
+                    font_size: '20'
+ 
+                Label:
+                    font_size: '20'
+                    id: hasil20
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil21
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil22
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil23
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil24
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil25
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "46"
+                    font_size: '20'
+ 
+                Label:
+                    font_size: '20'
+                    id: hasil26
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil27
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil28
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil29
+
+            
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "menu"
+                    root.manager.transition.direction = "left"
+    
+            
+<ThirdWindow>:
+    name: "third"
+    #dbname:dbname
+    BoxLayout:        
+        # anchor_x: 'center'
+        # anchor_y: 'center'
+        #size_hint: 0.1,0.1
+        orientation: 'vertical'
+        padding: 20
+        BoxLayout:
+            Label:
+        BoxLayout:
+            Label:
+                font_size: '60'
+                text:'APP/OPS Room CWP'
+                color: 0,0,0,1  
+        
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "45"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil30
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "46"
+                    font_size: '20'
+ 
+                Label:
+                    font_size: '20'
+                    id: hasil31
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil32
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil33
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil34
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "45"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil35
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "46"
+                    font_size: '20'
+ 
+                Label:
+                    font_size: '20'
+                    id: hasil36
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil37
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil38
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil39
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil40
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil41
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil42
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "46"
+                    font_size: '20'
+ 
+                Label:
+                    font_size: '20'
+                    id: hasil43
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil44
+            
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "menu"
+                    root.manager.transition.direction = "left"
+
+<FourWindow>:
+    name: "four"
+    #dbname:dbname
+    BoxLayout:        
+        # anchor_x: 'center'
+        # anchor_y: 'center'
+        #size_hint: 0.1,0.1
+        orientation: 'vertical'
+        padding: 20
+        BoxLayout:
+            Label:
+        BoxLayout:
+            Label:
+                font_size: '60'
+                text:'ADC/Tower CWP'
+                color: 0,0,0,1  
+        
+
+        BoxLayout:
+            orientation: 'horizontal'
+            # ==========================================START================ cwp45
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "45"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil45
+
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "46"
+                    font_size: '20'
+ 
+                Label:
+                    font_size: '20'
+                    id: hasil46
+
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "47"
+                    font_size: '20'
+                Label:
+                    font_size: '20'
+                    id: hasil47
+
+    
+
+            
+        GridLayout:  
+            Button:
+                background_normal: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                background_down: "D:/WEB DEVELOPING PROJECT/Belajar/Python/LatihanPakArif/UAS post-get-db/sensor iksan/source-gambar/12.png"
+                size_hint_x: .3
+                size_hint_y: .5
+                on_release:
+                    app.root.current = "menu"
+                    root.manager.transition.direction = "left"
+    

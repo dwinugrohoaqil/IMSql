@@ -1,0 +1,33 @@
+ACC/OPS ROOM ****
+cwp 29 UNIT
+
+APP/OPS ROOM ****
+cwp 15 UNIT
+
+TWR ****
+cwp 3 UNIT
+
+------------------------------------------------
+47 UNIT
+------------------------------------------------
+
+FDO ****
+cwp 1 UNIT
+
+SMS ----
+cwp 7 UNIT
+
+OATS ----
+cwp 1 UNIT
+
+POSKO ----
+cwp 1 UNIT
+
+Tek SUP ----
+cwp 1 UNIT
+
+GP ----
+cwp 1 UNIT
+
+RDPS ----
+cwp 1 UNIT
