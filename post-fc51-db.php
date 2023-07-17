@@ -14,7 +14,7 @@
 $servername = "localhost";
 
 // REPLACE with your Database name
-$dbname = "47_cwp";
+$dbname = "cwp_jatsc";
 // REPLACE with Database user
 $username = "Aqil";
 // REPLACE with Database user password
